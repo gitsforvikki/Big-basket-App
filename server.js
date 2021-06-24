@@ -36,20 +36,18 @@ mongoose.connect(process.env.MONGO_DB_CLOUD_URL,{
 });
 
 
-/*
 //empty request
 app.get('/',(request , response)=>{
     response.send(`<h2>Welcome to Bigbasket Server Application</h2>`);
 });
-*/
 
 
-if(process.env.NODE_ENV === "production"){
+/*if(process.env.NODE_ENV === "production"){
     app.use(express.static(path.join(__dirname , 'client' , 'build')));
     app.get('/', (request,response) => {
         response.sendFile(path.join(__dirname , 'client' , 'build' , 'index.html'));
     });
-}
+}*/
 
 app.listen(port , ()=>{
     console.log(`Express server is started at PORT : ${port}`);
